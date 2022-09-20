@@ -1,8 +1,7 @@
 // find indices of two numbers in a list that add up to a target number
-// list: [2, 7, 11, 15], target: 9
 
-let target = 9
-let list = [11, 2, 7, 15]
+const fs = require('fs')
+let target = 8427
 let res = []
 
 const findIndices = (target, list) => {
@@ -20,4 +19,8 @@ const findIndices = (target, list) => {
     return array.length === 0 ? [] : [list[array[0]], list[array[1]]]
 }
 
-console.log(findIndices(target, list))
+console.time('Time')
+const data = fs.readFileSync('/Users/vladkondrackiy/Tests/Tasks-/test.txt',
+    {encoding:'utf8', flag:'r'})
+console.log('RES -', findIndices(target, JSON.parse("[" + data + "]")))
+console.timeEnd('Time')
