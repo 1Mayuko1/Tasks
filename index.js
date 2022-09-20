@@ -15,6 +15,7 @@ const findIndices = (target, list) => {
             }
         })
     })
+
     let array = [...new Set(res)]
     return array.length === 0 ? [] : [list[array[0]], list[array[1]]]
 }
