@@ -1,26 +1,22 @@
-// find indices of two numbers in a list that add up to a target number
+// 1 - find indices of two numbers in a list that add up to a target number
+// 2 - by hashMap
 
 const fs = require('fs')
 let target = 8427
 let res = []
+const dataFromTxt = fs.readFileSync('/Users/vladkondrackiy/Tests/Tasks-/test.txt', {encoding:'utf8', flag:'r'})
+let dictFromData = {...JSON.parse("[" + dataFromTxt + "]")}
 
-const findIndices = (target, list) => {
-    list.map((itemX, indexX) => {
-        list.map((itemY, indexY) => {
-            if (itemX + itemY === target) {
-                res.push(indexX, indexY)
-            } else {
-                return []
-            }
-        })
-    })
+console.log(dictFromData) // { ..., '9996': 7495, '9997': 9479, '9998': 8464, '9999': 6416 }
 
-    let array = [...new Set(res)]
-    return array.length === 0 ? [] : [list[array[0]], list[array[1]]]
+
+const findIndices = (target, dict) => {
+
+    // your code
+
 }
 
 console.time('Time')
-const data = fs.readFileSync('/Users/vladkondrackiy/Tests/Tasks-/test.txt',
-    {encoding:'utf8', flag:'r'})
-console.log('RES -', findIndices(target, JSON.parse("[" + data + "]")))
+// code
 console.timeEnd('Time')
+
